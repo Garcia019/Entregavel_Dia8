@@ -1,12 +1,33 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//ESCREVA SEU CÓDIGO AQUI!!
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+function Calculadora(num1, num2, operador){
+  let resultado
+  switch(operador){
+    case "+":
+      resultado = Number(num1) + Number(num2)
+      break;
+    case "-":
+      resultado = Number(num1) - Number(num2)
+      break;
+    case "*":
+      resultado = Number(num1) * Number(num2)
+      break;
+    case "/":
+      resultado = Number(num1) / Number(num2)
+      break;
+    case "e":
+      let exponenciacao = 1
+      for(let expoente = 0; expoente < num2; expoente++){
+        exponenciacao *= Number(num1)
+      }
+      resultado = exponenciacao
+      break;
+    default:
+      break;
+  }
+  if(resultado == undefined || resultado > 1000000){
+    resultado = "ERRO"
+  }
+  return resultado
+}
 let visor = document.getElementById("visor");
 
 function adicionar(tecla) {
